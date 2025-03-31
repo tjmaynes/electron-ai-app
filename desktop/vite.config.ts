@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 3000,
+  },
   plugins: [
     react(),
     electron({
@@ -23,7 +26,7 @@ export default defineConfig({
       renderer: process.env.NODE_ENV === 'test'
         // https://github.com/electron-vite/vite-plugin-electron-renderer/issues/78#issuecomment-2053600808
         ? undefined
-        : {},
+        : {}
     }),
   ],
 })
